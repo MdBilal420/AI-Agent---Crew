@@ -2,4 +2,3 @@ crewai
 streamlit
 crewai_tools
 langchain_community
-sqlite3
