@@ -11,7 +11,10 @@ import streamlit as st
 
 openai_api_key = os.environ["OPENAI_API_KEY"]
 os.environ["OPENAI_MODEL_NAME"] = 'gpt-3.5-turbo'
-#os.environ["SERPER_API_KEY"] = os.environ["SERPER_API_KEY"]
+from crewai_tools import DirectoryReadTool, \
+                         FileReadTool, \
+                         SerperDevTool
+
 
 
 sales_rep_agent = Agent(
@@ -54,9 +57,6 @@ lead_sales_rep_agent = Agent(
     verbose=True
 )
 
-from crewai_tools import DirectoryReadTool, \
-                         FileReadTool, \
-                         SerperDevTool
 
 
 directory_read_tool = DirectoryReadTool(directory='./instructions')
