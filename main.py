@@ -1,6 +1,6 @@
 # Warning control
-import warnings
-warnings.filterwarnings('ignore')
+# import warnings
+# warnings.filterwarnings('ignore')
 
 from crewai import Agent, Task, Crew
 

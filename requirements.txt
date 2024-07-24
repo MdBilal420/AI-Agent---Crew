@@ -2,3 +2,4 @@ crewai
 streamlit
 crewai_tools
 langchain_community
+sqlite3 >= 3.35.0
