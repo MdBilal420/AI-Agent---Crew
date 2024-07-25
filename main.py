@@ -169,6 +169,18 @@ milestone = st.text_input("Milestone")
 
 result = []
 
+def make_serializable(data):
+    if isinstance(data, set):
+        return list(data)
+    elif isinstance(data, dict):
+        return {key: make_serializable(value) for key, value in data.items()}
+    elif isinstance(data, list):
+        return [make_serializable(element) for element in data]
+    else:
+        return data
+
+
+
 with st.form(
     "myform",
     clear_on_submit=True
@@ -180,6 +192,7 @@ with st.form(
     "position": {position},
     "milestone": {milestone}
     }
+    inputs = make_serializable(inputs)
 
     submitted = st.form_submit_button(
         "Submit",
